@@ -2,9 +2,9 @@ import './App.css';
 import {Routes, Route } from'react-router-dom';
 import { useEffect, useState } from 'react';
 import Navbar from './Components/Navbar';
-import Home from './Components/Home';
-import Reviews from './Components/Reviews';
-import Bookings from './Components/Bookings'
+// import Home from './Components/Home';
+import ReviewPages from './Components/ReviewPage';
+import UserList from './Components/UserList';
 import  Login from './pages/Login';
 
 
@@ -29,15 +29,10 @@ function App() {
       <Navbar user={user} setUser={setUser} />
       <main>
         <Routes>
-          {/* <Route path="/new">
-            <NewRecipe user={user} />
-          </Route> */}
-          {/* <Route path="/">
-            <Login />
-          </Route> */}
-          <Route path='/' element={<Home/>}/>
-      <Route exact path='/bookings' element={<Bookings/>}/>
-      <Route exact path='/reviews' element={<Reviews/>}/>
+          
+          {/* <Route path='/' element={<Home/>}/> */}
+      <Route exact path='/users' element={<UserList/>}/>
+      <Route exact path='/reviews' element={<ReviewPages/>}/>
         </Routes>
       </main>
     </>
