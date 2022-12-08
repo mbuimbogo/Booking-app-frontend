@@ -14,8 +14,7 @@ input[type=text], input[type=password] {
   margin: 8px 0;
   padding: 7px 20px;
   display: block;
-  /*border: 1px solid #ccc;
-  box-sizing: border-box; */
+
 }
 p{
   color: indigo;
@@ -51,13 +50,7 @@ button {
   font-weight: bold;
   text-decoration: none;
 }
-/*navbar css*/
-/* .navbar {
-  padding: 15px 0;
-  position: fixed;
-  width: 100%;
-  top:0
-} */
+
 
 /* Add a hover effect for buttons */
 button:hover {
@@ -78,7 +71,6 @@ img.avatar {
 /* Add padding to containers */
 .container {
   padding: 16px;
-  /* justify-content: center; */
   align-items: center;
   margin-left: 450px
   
