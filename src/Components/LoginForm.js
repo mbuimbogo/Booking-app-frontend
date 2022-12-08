@@ -1,16 +1,20 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import Login from "../pages/Login";
 import { Button, Error, Input, FormField, Label } from "../styles";
+
 
 function LoginForm({ onLogin }) {
   const [user_name, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate()
 
   function handleSubmit(e) {
     e.preventDefault();
     setIsLoading(true);
-    fetch("http://127.0.0.1:3000/login", {
+    fetch("https://restaurant-booking-app-production.up.railway.app/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -21,7 +25,12 @@ function LoginForm({ onLogin }) {
       if (r.ok) {
         r.json().then((user) => onLogin(user));
       } else {
-        r.json().then((err) => setErrors(err.errors));
+        r.json().then((err) => {
+          alert("username or password is invalid")
+          setErrors(err.errors)
+          navigate('/login')
+        })
+       
       }
     });
   }
@@ -54,9 +63,9 @@ function LoginForm({ onLogin }) {
         </Button>
       </FormField>
       <FormField>
-        {errors.map((err) => (
+        {errors? errors.map((err) => (
           <Error key={err}>{err}</Error>
-        ))}
+        )):""}
       </FormField>
     </form>
   );
