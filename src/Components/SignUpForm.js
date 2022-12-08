@@ -14,7 +14,7 @@ function SignUpForm({ onLogin }) {
     e.preventDefault();
     setErrors([]);
     setIsLoading(true);
-    fetch("/signup", {
+    fetch("https://restaurant-booking-app-production.up.railway.app/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -71,9 +71,9 @@ function SignUpForm({ onLogin }) {
         <Button type="submit">{isLoading ? "Loading..." : "Sign Up"}</Button>
       </FormField>
       <FormField>
-        {errors.map((err) => (
+      {errors? errors.map((err) => (
           <Error key={err}>{err}</Error>
-        ))}
+        )):""}
       </FormField>
     </form>
   );
