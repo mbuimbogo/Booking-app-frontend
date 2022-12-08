@@ -8,7 +8,7 @@ function NavBar({ user, setUser }) {
 
 
   function handleLogoutClick() {
-    fetch("http://127.0.0.1:3000/logout", { method: "DELETE" }).then((r) => {
+    fetch("https://restaurant-booking-app-production.up.railway.app/logout", { method: "DELETE" }).then((r) => {
       if (r.ok) {
         setUser(null);
       }
@@ -23,12 +23,12 @@ function NavBar({ user, setUser }) {
         <Link to="/">Signature Restaurant</Link>
       </Logo>
       <div className="navv">
-      <NavLink to="/" className="navbar-link" >Home</NavLink>
-      <NavLink   to="./bookings" className="navbar-link" >Bookings</NavLink>
+      <NavLink to="./" className="navbar-link" >Home</NavLink>
+      <NavLink   to="./users" className="navbar-link" >Bookings</NavLink>
       <NavLink to="./reviews" className="navbar-link" >Reviews</NavLink> 
       </div>
       <Nav>
-        <Button as={Link} to="/new">
+        <Button as={Link} to="/">
           Book With us
         </Button>
         <Button variant="outline" onClick={handleLogoutClick}>
