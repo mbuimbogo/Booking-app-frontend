@@ -16,8 +16,6 @@ function NavBar({ user, setUser }) {
   }
 
   return (
-   
-    
  <Wrapper classNameName="navbar">
       <Logo>
         <Link to="/">Signature Restaurant</Link>
